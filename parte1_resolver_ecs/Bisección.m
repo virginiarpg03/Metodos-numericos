@@ -1,50 +1,46 @@
-%___________________________________________________________________________________________________________________________%
-%calcular la Xn con una determinada delta%
+%___________________________________________________________________________________________%
+% Cálculo de la raíz xn con un determinado valor de delta usando el método de bisección   %
+%___________________________________________________________________________________________%
 
-f= @(x) 4*pi^2 * x.^4 - 2000*pi*x - 500;
+% Definimos la función 
+f = @(x) 4*pi^2 * x.^4 - 2000*pi*x - 500;
 
-%busco a y b tal que sus imagenes tengan signos distintos (intervale no enorme xdeu)%
-
-%la pinto para saber que a y b cojer%
-
-x= 0: .01: 10;
+% Visualización de la función para elegir un intervalo adecuado [a, b]
+x = 0:0.01:10;
 plot(x, f(x));
-grid
+grid on;
 
-% he visto que en este caso está entre el 5 y el 6%
+% Tras observar la gráfica, elegimos un intervalo donde f(a)*f(b)<0
+a = 5;
+b = 6;
 
-a=5 ;
-b=6 ;   
+% Copias auxiliares del intervalo
+an = a;
+bn = b;
 
-an=a;
-bn=b;
-delta= 1e-6 ; %la que me den%
+% Precisión deseada
+delta = 1e-6;
 
-n= ceil ( log2 ((b-a)/delta )); %la formula que sabemos wei%
+% Cálculo del número de iteraciones necesarias según la fórmula teórica
+n = ceil(log2((b - a) / delta));
 
+% Método de bisección
+for i = 1:n
+    xn = (an + bn) / 2;  % Punto medio
 
-   for i= 1:n 
-       
-       xn= (an+bn)*0.5;    %ponemos los casos posibles%
-       
-          if f(xn)==0                   %caso1: xn=x*%
-              break;
-              
-          elseif f(xn)*f(an)<0          %caso2: x* estará en el nuevo intervalo an-xn %
-              
-              an=an;
-              bn=xn;
-              
-          else                          %caso3: x* está en el nuevo intervalo xn-bn % 
-              
-              an=xn;
-              bn=bn;
-              
-          end
-          
-       
-   end
-   
-   xn= (an+bn)*0.5
-   
+    if f(xn) == 0
+        break;  % Hemos encontrado la raíz exacta (caso poco habitual)
+    elseif f(xn) * f(an) < 0
+        % La raíz está en el subintervalo [an, xn]
+        bn = xn;
+    else
+        % La raíz está en el subintervalo [xn, bn]
+        an = xn;
+    end
+end
+
+% Aproximación final de la raíz
+xn = (an + bn) / 2;
+fprintf('La raíz aproximada es xn = %.8f\n', xn);
+
    
