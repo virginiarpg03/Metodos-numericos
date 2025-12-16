@@ -15,7 +15,7 @@ Técnicas de interpolación para obtener funciones aproximadas a partir de datos
 🔹 ***parte3_Integración***
 
 ntegración numérica (cuadraturas). Se estudian fórmulas como la del trapecio, Simpson 1/3 y 3/8, así como cuadraturas de orden 3 y 5.
-ℹ Este contenido está ampliado en el repositorio de Elementos Finitos.
+Contenido ampliado en el repositorio de Elementos Finitos.
 
 🔹 ***parte4_Diferenciación***
 
