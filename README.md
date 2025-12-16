@@ -2,7 +2,7 @@
 Códigos sobre métodos numéricos impartidos en la asignatura de matemáticas de la especialidad matemática industrial
 
 
-## El contenido está dividido en varias secciones temáticas:
+## El contenido está dividido en varias secciones:
 
 🔹 ***parte1_resolver_ecs***
 
@@ -15,22 +15,10 @@ Técnicas de interpolación para obtener funciones aproximadas a partir de datos
 🔹 ***parte3_Integración***
 
 ntegración numérica (cuadraturas). Se estudian fórmulas como la del trapecio, Simpson 1/3 y 3/8, así como cuadraturas de orden 3 y 5.
-ℹ Este contenido está ampliado en el repositorio de Elementos Finitos (añade aquí el enlace si lo tienes).
+ℹ Este contenido está ampliado en el repositorio de Elementos Finitos.
 
 🔹 ***parte4_Diferenciación***
 
 Resolución numérica de ecuaciones diferenciales ordinarias (EDOs). Se incluyen métodos como Euler, Heun y Runge-Kutta para aproximar soluciones de EDOs cuando no se pueden obtener de forma analítica.
 
-🧪 Prácticas
 
-Ejercicios de examen
-
-📄 Exámenes
-
-Exámenes del curso
-
-🔧 Scripts útiles
-
-Funciones y scripts de MATLAB con diversas utilizades.
-
-🔹Otros
